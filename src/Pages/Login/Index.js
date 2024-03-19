@@ -1,4 +1,5 @@
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import Logo from '../../../assets/logo_white.png'
 
@@ -54,6 +55,7 @@ export default function Login() {
     })
   return (
     <View style={styles.container}>
+        <StatusBar style='light' />
         <View style={{ width: 300}}>
             <Image resizeMode='contain' source={Logo} style={styles.logo}/>
         </View>
