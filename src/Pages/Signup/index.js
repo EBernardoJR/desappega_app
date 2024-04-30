@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import Logo from '../../../assets/logo_white.png'
@@ -21,7 +21,8 @@ export default function Signup() {
             borderWidth: 2,
             marginVertical: 15,
             color: '#fff',
-            width: 300
+            width: '70%',
+            maxWidth: 450
         },
         logo: {
             width: '100%',
@@ -53,23 +54,25 @@ export default function Signup() {
         }
     })
   return (
-    <View style={styles.container}>
-        <StatusBar style='light' />
-        <View style={{ width: 300}}>
-            <Image resizeMode='contain' source={Logo} style={styles.logo}/>
+    <ScrollView style={{ paddingBottom: 60, backgroundColor: '#8C52FF'}}>     
+        <View style={styles.container}>
+            <StatusBar style='light' />
+            <View style={{ width: 300}}>
+                <Image resizeMode='contain' source={Logo} style={styles.logo}/>
+            </View>
+        <Text style={styles.desc}>Cadastro</Text>
+        <TextInput style={styles.input} placeholderTextColor={'#fff'} placeholder='Digite o seu e-mail'/>
+        <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Senha'/>
+        <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Confirme a senha'/>
+        <TouchableOpacity>
+                <View style={styles.button}>
+                <Text style={styles.buttonText}>Entrar</Text>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <Text style={styles.cadastro}>Se já estiver cadastrado, entre agora clicando aqui</Text>
+        </TouchableOpacity>
         </View>
-      <Text style={styles.desc}>Cadastro</Text>
-      <TextInput style={styles.input} placeholderTextColor={'#fff'} placeholder='Digite o seu e-mail'/>
-      <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Senha'/>
-      <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Confirme a senha'/>
-      <TouchableOpacity>
-            <View style={styles.button}>
-            <Text style={styles.buttonText}>Entrar</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity>
-      <Text style={styles.cadastro}>Se já estiver cadastrado, entre agora clicando aqui</Text>
-      </TouchableOpacity>
-    </View>
+    </ScrollView>
   )
 }

@@ -8,7 +8,7 @@ import About from './src/Pages/About';
 export default function App() {
   return (
     <View style={styles.container}>
-      <About />
+      <Signup />
       <StatusBar style="light" />
     </View>
   );
