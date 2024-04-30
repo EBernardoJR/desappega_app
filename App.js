@@ -4,11 +4,12 @@ import Login from './src/Pages/Login';
 import Signup from './src/Pages/Signup';
 import Home from './src/Pages/Home';
 import About from './src/Pages/About';
+import Routes_Main from './src/routes';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Signup />
+      <Routes_Main />
       <StatusBar style="light" />
     </View>
   );

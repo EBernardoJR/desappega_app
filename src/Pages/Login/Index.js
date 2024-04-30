@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import Logo from '../../../assets/logo_white.png'
 
-export default function Login() {
+export default function Login({ navigation }) {
     const styles = StyleSheet.create({
         container: {
             backgroundColor: '#8C52FF',
@@ -62,12 +62,12 @@ export default function Login() {
       <Text style={styles.desc}>Seja bem vindo(a)!</Text>
       <TextInput style={styles.input} placeholderTextColor={'#fff'} placeholder='Digite o seu e-mail'/>
       <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Senha'/>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> navigation.navigate('About')}>
             <View style={styles.button}>
             <Text style={styles.buttonText}>Entrar</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> navigation.navigate('Signup')} >
       <Text style={styles.cadastro}>Se ainda não estiver cadastrado, cadastre-se agora clicando aqui</Text>
       </TouchableOpacity>
     </View>

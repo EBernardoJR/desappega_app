@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import Logo from '../../../assets/logo_white.png'
 
-export default function Signup() {
+export default function Signup({ navigation}) {
     const styles = StyleSheet.create({
         container: {
             backgroundColor: '#8C52FF',
@@ -11,7 +11,8 @@ export default function Signup() {
             margin: 0,
             padding: 0,
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            marginTop: 80
         },
         input: {
             paddingVertical: 15,
@@ -54,7 +55,7 @@ export default function Signup() {
         }
     })
   return (
-    <ScrollView style={{ paddingBottom: 60, backgroundColor: '#8C52FF'}}>     
+    <ScrollView style={{ backgroundColor: '#8C52FF'}}>     
         <View style={styles.container}>
             <StatusBar style='light' />
             <View style={{ width: 300}}>
@@ -64,12 +65,12 @@ export default function Signup() {
         <TextInput style={styles.input} placeholderTextColor={'#fff'} placeholder='Digite o seu e-mail'/>
         <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Senha'/>
         <TextInput secureTextEntry={true} placeholderTextColor={'#fff'} style={styles.input} placeholder='Confirme a senha'/>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('About')}>
                 <View style={styles.button}>
-                <Text style={styles.buttonText}>Entrar</Text>
+                <Text style={styles.buttonText}>Cadastrar</Text>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
         <Text style={styles.cadastro}>Se já estiver cadastrado, entre agora clicando aqui</Text>
         </TouchableOpacity>
         </View>
