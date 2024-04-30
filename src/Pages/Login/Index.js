@@ -21,7 +21,8 @@ export default function Login() {
             borderWidth: 2,
             marginVertical: 15,
             color: '#fff',
-            width: 300
+            width: '70%',
+            maxWidth: 450
         },
         logo: {
             width: '100%',
