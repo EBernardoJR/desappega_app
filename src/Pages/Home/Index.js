@@ -1,10 +1,16 @@
-import React from 'react';
-import { View } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native'
+import React from 'react'
 
-// import { Container } from './styles';
-
-const Home = () => {
-  return <View />;
+export default function Index() {
+  const styles = StyleSheet.Create({
+    container: {
+      flex: 1,
+      backgroundColor: '#8C52FF'
+    }
+  })
+  return (
+    <View style={styles.container}>
+      <Text>Tela home</Text>
+    </View>
+  )
 }
-
-export default Home;
